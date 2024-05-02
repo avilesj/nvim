@@ -1,14 +1,2 @@
-return {
-	{ -- Adds git related signs to the gutter, as well as utilities for managing changes
-	'lewis6991/gitsigns.nvim',
-	opts = {
-		signs = {
-			add = { text = '+' },
-			change = { text = '~' },
-			delete = { text = '_' },
-			topdelete = { text = '‾' },
-			changedelete = { text = '~' },
-		},
-	},
-},
-  }
+-- [nfnl] Compiled from fnl/aviles/plugins/gitsigns.fnl by https://github.com/Olical/nfnl, do not edit.
+return {{"lewis6991/gitsigns.nvim", opts = {signs = {add = {text = "+"}, change = {text = "~"}, changedelete = {text = "~"}, delete = {text = "_"}, topdelete = {text = "\226\128\190"}}}}}

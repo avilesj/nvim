@@ -1,8 +1,6 @@
--- Runs before ANYTHING.
---
--- Map leader to <SPC>. Needed before loading plugins.
+-- [nfnl] Compiled from fnl/aviles/pre-init.fnl by https://github.com/Olical/nfnl, do not edit.
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
--- Disasble netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+return nil

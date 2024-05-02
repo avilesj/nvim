@@ -1,25 +1,10 @@
-return {
-  {
-    "echasnovski/mini.pairs",
-    event = "VeryLazy",
-    opts = {
-      mappings = {
-        ["`"] = { action = "closeopen", pair = "``", neigh_pattern = "[^\\`].", register = { cr = false } },
-      },
-    },
-    keys = {
-      {
-        "<leader>up",
-        function()
-          vim.g.minipairs_disable = not vim.g.minipairs_disable
-          if vim.g.minipairs_disable then
-            print("Disabled auto pairs", { title = "Option" })
-          else
-            print("Enabled auto pairs", { title = "Option" })
-          end
-        end,
-        desc = "Toggle Auto Pairs",
-      },
-    },
-  },
-}
+-- [nfnl] Compiled from fnl/aviles/plugins/auto-pairs.fnl by https://github.com/Olical/nfnl, do not edit.
+local function _1_()
+  vim.g.minipairs_disable = not vim.g.minipairs_disable
+  if vim.g.minipairs_disable then
+    return print("Disabled auto pairs", {title = "Option"})
+  else
+    return print("Enabled auto pairs", {title = "Option"})
+  end
+end
+return {{"echasnovski/mini.pairs", event = "VeryLazy", keys = {{"<leader>up", _1_, desc = "Toggle Auto Pairs"}}, opts = {mappings = {["`"] = {action = "closeopen", neigh_pattern = "[^\\`].", pair = "``", register = {cr = false}}}}}}

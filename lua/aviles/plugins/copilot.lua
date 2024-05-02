@@ -1,23 +1,5 @@
-return {
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    build = ":Copilot auth",
-    opts = {
-      suggestion = { enabled = false },
-      filetypes = {
-        markdown = true,
-        help = true,
-      },
-    },
-  },
-  {
-    "zbirenbaum/copilot-cmp",
-    dependencies = "copilot.lua",
-    config = function()
-      require("copilot_cmp").setup()
-    end,
-  },
-  { "AndreM222/copilot-lualine" },
-}
+-- [nfnl] Compiled from fnl/aviles/plugins/copilot.fnl by https://github.com/Olical/nfnl, do not edit.
+local function _1_()
+  return (require("copilot_cmp")).setup()
+end
+return {{"zbirenbaum/copilot.lua", build = ":Copilot auth", cmd = "Copilot", event = "InsertEnter", opts = {filetypes = {help = true, markdown = true}, suggestion = {enabled = false}}}, {"zbirenbaum/copilot-cmp", config = _1_, dependencies = "copilot.lua"}, {"AndreM222/copilot-lualine"}}
