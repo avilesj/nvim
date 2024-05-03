@@ -72,7 +72,9 @@
                                       ((. (require :cmp_nvim_lsp)
                                           :default_capabilities))))
             (local servers
-                   {:fennel_ls {:filetypes [:fennel] }
+                   {:fennel_ls {:filetypes [:fennel] 
+                   :settings { :fennel-ls { :extra-globals :vim}}
+                   }
                     :gopls {}
                     :html {}
                     :htmx {}
