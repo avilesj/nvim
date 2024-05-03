@@ -72,11 +72,7 @@
                                       ((. (require :cmp_nvim_lsp)
                                           :default_capabilities))))
             (local servers
-                   {:fennel_ls {:filetypes [:fennel]
-                                :root_dir (fn []
-                                            (local util
-                                                   (require :aviles.util.fs))
-                                            (util.find_file_dir :.nfnl.fnl))}
+                   {:fennel_ls {:filetypes [:fennel] }
                     :gopls {}
                     :html {}
                     :htmx {}

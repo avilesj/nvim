@@ -34,29 +34,25 @@ local function _1_()
   capabilities = vim.tbl_deep_extend("force", capabilities, (require("cmp_nvim_lsp")).default_capabilities())
   local servers
   local function _6_()
-    local util = require("aviles.util.fs")
-    return util.find_file_dir(".nfnl.fnl")
-  end
-  local function _7_()
     return vim.lsp.buf.code_action({apply = true, context = {diagnostics = {}, only = {"source.organizeImports.ts"}}})
   end
-  local function _8_()
+  local function _7_()
     return vim.lsp.buf.code_action({apply = true, context = {diagnostics = {}, only = {"source.removeUnused.ts"}}})
   end
-  local function _9_(filename)
+  local function _8_(filename)
     local util = require("lspconfig.util")
     return (util.find_package_json_ancestor(filename) or util.find_git_ancestor())
   end
-  servers = {fennel_ls = {filetypes = {"fennel"}, root_dir = _6_}, gopls = {}, html = {}, htmx = {}, lua_ls = {settings = {Lua = {completion = {callSnippet = "Replace"}}}}, tailwindcss = {}, templ = {}, tsserver = {keys = {{"<leader>co", _7_, desc = "Organize Imports"}, {"<leader>cR", _8_, desc = "Remove Unused Imports"}}, root_dir = _9_, settings = {completions = {completeFunctionCalls = true}}}}
+  servers = {fennel_ls = {filetypes = {"fennel"}}, gopls = {}, html = {}, htmx = {}, lua_ls = {settings = {Lua = {completion = {callSnippet = "Replace"}}}}, tailwindcss = {}, templ = {}, tsserver = {keys = {{"<leader>co", _6_, desc = "Organize Imports"}, {"<leader>cR", _7_, desc = "Remove Unused Imports"}}, root_dir = _8_, settings = {completions = {completeFunctionCalls = true}}}}
   do end (require("mason")).setup()
   local ensure_installed = vim.tbl_keys((servers or {}))
   vim.list_extend(ensure_installed, {"stylua"})
   do end (require("mason-tool-installer")).setup({ensure_installed = ensure_installed})
-  local function _10_(server_name)
+  local function _9_(server_name)
     local server = (servers[server_name] or {})
     server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, (server.capabilities or {}))
     return (require("lspconfig"))[server_name].setup(server)
   end
-  return (require("mason-lspconfig")).setup({handlers = {_10_}})
+  return (require("mason-lspconfig")).setup({handlers = {_9_}})
 end
 return {{"neovim/nvim-lspconfig", config = _1_, dependencies = {{"williamboman/mason.nvim", config = true}, "williamboman/mason-lspconfig.nvim", "WhoIsSethDaniel/mason-tool-installer.nvim", {"j-hui/fidget.nvim", opts = {}}, {"folke/neodev.nvim", opts = {}}}}}
