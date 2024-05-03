@@ -59,7 +59,7 @@
                                                       (when (and (and client
                                                                       client.server_capabilities.inlayHintProvider)
                                                                  vim.lsp.inlay_hint)
-                                                        (map :<leader>th
+                                                        (map :<leader>uth
                                                              (fn []
                                                                (vim.lsp.inlay_hint.enable 0
                                                                                           (not (vim.lsp.inlay_hint.is_enabled))))
@@ -72,9 +72,13 @@
                                       ((. (require :cmp_nvim_lsp)
                                           :default_capabilities))))
             (local servers
-                   {:fennel_ls {:filetypes [:fennel] 
+                   {
+                   :fennel_ls {:filetypes [:fennel] 
                    :settings { :fennel-ls { :extra-globals :vim}}
                    }
+                   :fennel_language_server
+                   {:settings {:fennel {:workspace {:library (vim.api.nvim_list_runtime_paths)}
+                   :diagnostics {:globals [:vim]}}}}
                     :gopls {}
                     :html {}
                     :htmx {}

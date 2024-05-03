@@ -1,7 +1,7 @@
 [{1 :stevearc/oil.nvim
   :dependencies [:nvim-tree/nvim-web-devicons]
   :event :Syntax
-  :keys [{1 :<leader>ee
+  :keys [{1 :<leader>te
           2 (fn []
               (local oil (require :oil))
               (local git (require :aviles.util.fs))
@@ -16,12 +16,12 @@
               (if (> cwd-length file-path-length) (oil.open file-path)
                   (oil.open cwd)))
           :desc :Oil}
-         {1 :<leader>er
+         {1 :<leader>tr
           2 (fn [] (local oil (require :oil))
               (local file-path (vim.fn.expand "%:p:h"))
               (oil.open file-path))
           :desc "Explore current file directory"}
-         {1 :<leader>ep
+         {1 :<leader>tp
           2 (fn []
               (local oil (require :oil))
               (local git-dir ((. (require :aviles.util.fs) :find_git_dir)))
@@ -30,7 +30,7 @@
                   (lua "return (table.unpack or _G.unpack)(___antifnl_rtns_1___)")))
               (print "No git directory found"))
           :desc "Explore project"}
-         {1 :<leader>ec
+         {1 :<leader>tc
           2 (fn [] (local oil (require :oil)) (oil.open (vim.fn.getcwd)))
           :desc "Explore current directory"}]
   :opts {:keymaps {:<BS> :actions.parent

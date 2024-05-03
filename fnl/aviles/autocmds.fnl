@@ -23,3 +23,10 @@
                                                         :p))
                               :group Aviles})
 
+(vim.api.nvim_create_autocmd [:BufWritePre]
+                             {:callback (fn []
+                                          (vim.api.nvim_buf_call (vim.api.nvim_get_current_buf) (fn [] (vim.cmd "normal gg=G")))
+                                          )
+                             :pattern :*.fnl
+                             :group Aviles})
+

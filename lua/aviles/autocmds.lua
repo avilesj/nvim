@@ -17,4 +17,11 @@ local function _3_(event)
   local file = (vim.loop.fs_realpath(event.match) or event.match)
   return vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
 end
-return vim.api.nvim_create_autocmd({"BufWritePre"}, {callback = _3_, group = Aviles})
+vim.api.nvim_create_autocmd({"BufWritePre"}, {callback = _3_, group = Aviles})
+local function _5_()
+  local function _6_()
+    return vim.cmd("normal gg=G")
+  end
+  return vim.api.nvim_buf_call(vim.api.nvim_get_current_buf(), _6_)
+end
+return vim.api.nvim_create_autocmd({"BufWritePre"}, {callback = _5_, pattern = "*.fnl", group = Aviles})

@@ -18,7 +18,7 @@
                                                  :<leader>s {:_ :which_key_ignore
                                                              :name "[S]earch"}
                                                  :<leader>t {:_ :which_key_ignore
-                                                             :name "[T]oggle"}
+                                                             :name "Tree explore"}
                                                  :<leader>w {:_ :which_key_ignore
                                                              :name "[W]orkspace"}})
             ((. (require :which-key) :register) {:<leader>h ["Git [H]unk"]}
