@@ -43,7 +43,7 @@ local function _1_()
     local util = require("lspconfig.util")
     return (util.find_package_json_ancestor(filename) or util.find_git_ancestor())
   end
-  servers = {fennel_ls = {filetypes = {"fennel"}, settings = {["fennel-ls"] = {["extra-globals"] = "vim"}}}, fennel_language_server = {settings = {fennel = {workspace = {library = vim.api.nvim_list_runtime_paths()}, diagnostics = {globals = {"vim"}}}}}, gopls = {}, html = {}, htmx = {}, lua_ls = {settings = {Lua = {completion = {callSnippet = "Replace"}}}}, tailwindcss = {}, templ = {}, tsserver = {keys = {{"<leader>co", _6_, desc = "Organize Imports"}, {"<leader>cR", _7_, desc = "Remove Unused Imports"}}, root_dir = _8_, settings = {completions = {completeFunctionCalls = true}}}}
+  servers = {fennel_ls = {filetypes = {"fennel"}, settings = {["fennel-ls"] = {["extra-globals"] = "vim"}}}, fennel_language_server = {settings = {fennel = {workspace = {library = vim.api.nvim_list_runtime_paths()}, diagnostics = {globals = {"vim"}}}}}, gopls = {}, html = {}, htmx = {}, lua_ls = {settings = {Lua = {completion = {callSnippet = "Replace"}}}}, tailwindcss = {}, clojure_lsp = {}, tsserver = {keys = {{"<leader>co", _6_, desc = "Organize Imports"}, {"<leader>cR", _7_, desc = "Remove Unused Imports"}}, root_dir = _8_, settings = {completions = {completeFunctionCalls = true}}}}
   do end (require("mason")).setup()
   local ensure_installed = vim.tbl_keys((servers or {}))
   vim.list_extend(ensure_installed, {"stylua"})
