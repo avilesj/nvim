@@ -1,30 +1,28 @@
 -- [nfnl] Compiled from fnl/aviles/plugins/orgmode.fnl by https://github.com/Olical/nfnl, do not edit.
+local org = require("aviles.org.util")
 local function _1_()
   local workspace = (os.getenv("HOME") .. "/notes")
-  return (require("orgmode")).setup({org_agenda_files = (workspace .. "/**/*"), org_default_notes_file = "~/notes/refile.org", org_meetings_dir = (workspace .. "/meetings"), org_templates_dir = (workspace .. "/templates")})
+  return (require("orgmode")).setup({org_agenda_files = (workspace .. "/**/*"), org_default_notes_file = "~/notes/refile.org", org_meetings_dir = (workspace .. "/meetings"), org_tickets_dir = (workspace .. "/tickets"), org_workspace_dir = workspace, org_templates_dir = (workspace .. "/templates")})
 end
 local function _2_()
-  local meetings_dir = (require("orgmode.config")).org_meetings_dir
-  local meeting_template_file = ((require("orgmode.config")).org_templates_dir .. "/meeting.org")
-  print(meeting_template_file)
-  local file = io.open(meeting_template_file, "r")
-  local content = nil
-  if file then
-    local current_time = os.date("%Y-%m-%d-%H%M%S")
-    local filename = (meetings_dir .. "/" .. current_time .. ".org")
-    local bufnr = vim.api.nvim_create_buf(true, false)
-    local lines = {}
-    for line in file:lines() do
-      table.insert(lines, line)
-    end
-    file:close()
-    vim.api.nvim_buf_set_name(bufnr, filename)
-    vim.api.nvim_buf_set_lines(bufnr, 0, ( - 1), false, lines)
-    do end (vim.bo[bufnr])["filetype"] = "org"
-    vim.api.nvim_command(("edit " .. filename))
-    return vim.cmd.only()
-  else
-    return print(("File not found: " .. meeting_template_file))
-  end
+  return org["new-meeting"]()
 end
-return {{"nvim-orgmode/orgmode", config = _1_, event = "VeryLazy", ft = {"org"}, keys = {{"<leader>omn", _2_, desc = "New meeting file"}}}}
+local function _3_()
+  return org["find-in-workspace-dir"]((require("orgmode.config")).org_workspace_dir)
+end
+local function _4_()
+  return org["find-in-workspace-dir"]((require("orgmode.config")).org_meetings_dir)
+end
+local function _5_()
+  return org["find-in-workspace-dir"]((require("orgmode.config")).org_articles_dir)
+end
+local function _6_()
+  return org["find-in-workspace-dir"]((require("orgmode.config")).org_tickets_dir)
+end
+local function _7_()
+  return org["new-file"]((require("orgmode.config")).org_workspace_dir, vim.fn.input("File name: "))
+end
+local function _8_()
+  return org["new-ticket"]()
+end
+return {{"nvim-orgmode/orgmode", config = _1_, event = "VeryLazy", ft = {"org"}, keys = {{"<leader>onm", _2_, {desc = "New meeting file"}}, {"<leader>oss", _3_, {desc = "Search all org files"}}, {"<leader>osm", _4_, {desc = "Search meetings"}}, {"<leader>osa", _5_, {desc = "Search articles"}}, {"<leader>ost", _6_, {desc = "Search tickets"}}, {"<leader>onf", _7_, {desc = "New org file"}}, {"<leader>ont", _8_, {desc = "New ticket"}}}}}

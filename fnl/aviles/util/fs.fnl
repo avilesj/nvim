@@ -14,5 +14,9 @@
     (set path (.. cwd "/" filename)))
   dir)
 
+(fn M.telescope [dir]
+  (let [telescope (require :telescope.builtin)]
+    (telescope.find_files {:cwd dir}))
+  )
 M
 

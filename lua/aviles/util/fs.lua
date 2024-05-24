@@ -23,4 +23,8 @@ M.find_file_dir = function(filename)
   end
   return dir
 end
+M.telescope = function(dir)
+  local telescope = require("telescope.builtin")
+  return telescope.find_files({cwd = dir})
+end
 return M
