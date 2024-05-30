@@ -33,5 +33,7 @@
 			:gosum]
     :highlight {:additional_vim_regex_highlighting [:ruby] :enable true}
     :indent {:disable [:ruby] :enable true}}}
-    {1 :windwp/nvim-ts-autotag :opts {}}]
+    {1 :windwp/nvim-ts-autotag :opts {}}
+    {1 :nvim-treesitter/nvim-treesitter-context}
+    ]
 
