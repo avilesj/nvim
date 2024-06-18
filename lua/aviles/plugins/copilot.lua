@@ -2,4 +2,4 @@
 local function _1_()
   return (require("copilot_cmp")).setup()
 end
-return {{"zbirenbaum/copilot.lua", build = ":Copilot auth", cmd = "Copilot", event = "InsertEnter", opts = {filetypes = {help = true, markdown = true}, suggestion = {enabled = false}}}, {"zbirenbaum/copilot-cmp", config = _1_, dependencies = "copilot.lua"}, {"AndreM222/copilot-lualine"}}
+return {{"zbirenbaum/copilot.lua", build = ":Copilot auth", cmd = "Copilot", event = "InsertEnter", opts = {filetypes = {help = true, markdown = true, yaml = true}, suggestion = {enabled = false}}}, {"zbirenbaum/copilot-cmp", config = _1_, dependencies = "copilot.lua"}, {"AndreM222/copilot-lualine"}}

@@ -102,6 +102,7 @@
                                         (require :lspconfig.util))
                                  (or (util.find_package_json_ancestor filename)
                                      (util.find_git_ancestor)))
+                     :single_file_support false
                      :settings {:completions {:completeFunctionCalls true}}}})
               ((. (require :mason) :setup))
               (local ensure-installed (vim.tbl_keys (or servers {})))
