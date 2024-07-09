@@ -5,4 +5,4 @@ end
 local function _2_()
   return (require("litee.gh")).setup
 end
-return {{"ldelossa/gh.nvim", "dependencies", [{{"ldelossa/litee.nvim", config = _1_}}] = 3, config = _2_}}
+return {{"ldelossa/gh.nvim", dependencies = {{"ldelossa/litee.nvim", config = _1_}}, config = _2_}}
