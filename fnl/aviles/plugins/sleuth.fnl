@@ -1,2 +1,0 @@
-[:tpope/vim-sleuth]
-
