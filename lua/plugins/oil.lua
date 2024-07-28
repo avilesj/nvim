@@ -25,7 +25,7 @@ local function _4_()
 end
 local function _5_()
   local oil = require("oil")
-  local git_dir = (require("aviles.util.fs")).find_git_dir()
+  local git_dir = require("aviles.util.fs").find_git_dir()
   if (git_dir ~= nil) then
     local ___antifnl_rtns_1___ = {oil.open(git_dir)}
     return (table.unpack or _G.unpack)(___antifnl_rtns_1___)

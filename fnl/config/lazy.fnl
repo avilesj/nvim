@@ -31,5 +31,6 @@
                                     {:import :lazyvim.plugins.extras.ui.mini-animate}
                                     {:import :lazyvim.plugins.extras.util.project}
                                     {:import :lazyvim.plugins.extras.coding.copilot}
+                                    {:import :lazyvim.plugins.extras.coding.mini-surround}
                                     {:import :plugins}]})
 
