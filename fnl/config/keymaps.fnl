@@ -2,9 +2,15 @@
 
 (local wk (require :which-key))
 
-(wk.register {:<leader>by {:name :+yank}
-              :<leader>l {:name :+lazy/leetcode}
-              :<leader>lc {:name :+Leet}})
+(wk.add { 
+              1 { 1 :<leader>m :group "local leader" :icon { :icon " "}} 
+              2 { 1 :<leader>by :group :yank }
+              3 { 1 :<leader>l :group :lazy/leetcode}
+              4 { 1 :<leader>lc :group :Leet}
+              5 { 1 :<leader>p :group :projects :icon { :icon "" :color "brown"}}
+              6 { 1 :<leader>t :group :oil :icon { :icon "" :color "green"}}
+             }
+             )
 
 (map :n :<leader>ll :<cmd>Lazy<cr> {:desc :Lazy})
 
