@@ -17,4 +17,4 @@ local function _1_()
   map("n", "<localleader>u", "<cmd>FlutterPubUpgrade<cr>", {desc = "Flutter Pub Upgrade"})
   return wk.add("f", {name = "Flutter", r = {"<cmd>FlutterRun<cr>", "Run"}, R = {"<cmd>FlutterRestart<cr>", "Restart"}, q = {"<cmd>FlutterQuit<cr>", "Quit"}, d = {"<cmd>FlutterDevices<cr>", "Devices"}, e = {"<cmd>FlutterEmulators<cr>", "Emulators"}, o = {"<cmd>FlutterOutlineToggle<cr>", "Outline"}, t = {"<cmd>FlutterDevTools<cr>", "DevTools"}, a = {"<cmd>FlutterLspReferences<cr>", "References"}, s = {"<cmd>FlutterSuper<cr>", "Super"}, T = {"<cmd>FlutterTest<cr>", "Test"}, w = {"<cmd>FlutterTestWatch<cr>", "Test Watch"}, p = {"<cmd>FlutterPubGet<cr>", "Pub Get"}, u = {"<cmd>FlutterPubUpgrade<cr>", "Pub Upgrade"}}, {prefix = "<localleader>"})
 end
-return {"akinsho/flutter-tools.nvim", dependencies = {"nvim-lua/plenary.nvim", "stevearc/dressing.nvim"}, opts = {flutter_lookup_cmd = "asdf where flutter"}, init = _1_, lazy = false}
+return {"akinsho/flutter-tools.nvim", dependencies = {"nvim-lua/plenary.nvim", "stevearc/dressing.nvim"}, opts = {flutter_lookup_cmd = "mise where flutter"}, init = _1_, lazy = false}
