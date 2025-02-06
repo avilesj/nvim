@@ -25,6 +25,7 @@
                                       {:import :lazyvim.plugins.extras.lang.go}
                                       {:import :lazyvim.plugins.extras.lang.clojure}
                                       {:import :lazyvim.plugins.extras.lang.json}
+                                      {:import :lazyvim.plugins.extras.lang.sql}
                                       {:import :lazyvim.plugins.extras.lang.omnisharp}
                                       {:import :lazyvim.plugins.extras.lang.elixir}
                                       {:import :lazyvim.plugins.extras.lang.tailwind}
