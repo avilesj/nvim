@@ -34,6 +34,5 @@
                                       {:import :lazyvim.plugins.extras.util.project}
                                       {:import :lazyvim.plugins.extras.coding.mini-surround}
                                       {:import :lazyvim.plugins.extras.coding.mini-snippets}
-                                      {:import :lazyvim.plugins.extras.ai.copilot}
                                       {:import :plugins}]})
 
