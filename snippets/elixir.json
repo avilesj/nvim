@@ -7,6 +7,10 @@
       "prefix": "cmp",
       "body": "def $1(assigns) do \n~H\"\"\"\n$0\n\"\"\"\n end"
     },
+    "HeexIf": {
+      "prefix": "heexif",
+      "body": "<%= if $1 do %>\n$0\n<% else %>\n$1\n<% end %>"
+    },
     "Placeholders": {
       "prefix": "pl",
       "body": "T1=${1:aa}\nT2=${2:<$1>}"
