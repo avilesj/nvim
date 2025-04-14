@@ -1,1 +1,5 @@
-{:source-file-patterns ["fnl/**/*.fnl"]}
+{
+:verbose true
+:source-file-patterns ["fnl/*.fnl"]
+
+}
