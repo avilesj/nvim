@@ -1,5 +1,1 @@
-{
-:verbose true
-:source-file-patterns ["fnl/*.fnl"]
-
-}
+{:verbose false :source-file-patterns ["fnl/*.fnl"]}

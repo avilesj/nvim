@@ -22,9 +22,9 @@ prepare:
 	cd _fennel/fennel-fmt && make && sudo make install && cd -
 
 	@echo "Installing docs"
-	mkdir -p $HOME/.local/share/fennel-ls/docsets/
-	curl -o $HOME/.local/share/fennel-ls/docsets/love2d.lua https://p.hagelb.org/docsets/love2d.lua
-	curl -o $HOME/.local/share/fennel-ls/docsets/nvim.lua https://git.sr.ht/~micampe/fennel-ls-nvim-docs/blob/main/nvim.lua
+	mkdir -p $$HOME/.local/share/fennel-ls/docsets/
+	curl -o $$HOME/.local/share/fennel-ls/docsets/love2d.lua https://p.hagelb.org/docsets/love2d.lua
+	curl -o $$HOME/.local/share/fennel-ls/docsets/nvim.lua https://git.sr.ht/~micampe/fennel-ls-nvim-docs/blob/main/nvim.lua
 	
 clean:
 	rm -rf $$HOME/.local/share/nvim/
