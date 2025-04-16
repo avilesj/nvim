@@ -285,9 +285,9 @@
                                               :start "🚀"
                                               :task "📌"})}})
 
-(vim.lsp.config :fennel-ls
-                {:cmd ["fennel-ls"]
-                 :filetypes ["fennel"]
-                 :root_markers ["flsproject.fnl"]})
+(fn load-langs [languages]
+  ;; Load languages configurations
+  (each [k v (ipairs languages)]
+    (require (.. "lang" "." v))))
 
-(vim.lsp.enable :fennel-ls)
+(load-langs ["fennel"])
