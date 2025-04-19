@@ -55,4 +55,4 @@ local function load_langs(languages)
   end
   return nil
 end
-return load_langs({"fennel"})
+return load_langs({"fennel", "elixir"})
