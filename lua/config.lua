@@ -34,9 +34,14 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>", {desc = "Move focus to the right wind
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", {desc = "Move focus to the lower window"})
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", {desc = "Move focus to the upper window"})
 local function _2_()
+  vim.wo.wrap = not vim.wo.wrap
+  return nil
+end
+vim.keymap.set("n", "<leader>uw", _2_, {desc = "Toggle wrap"})
+local function _3_()
   return vim.highlight.on_yank()
 end
-vim.api.nvim_create_autocmd("TextYankPost", {callback = _2_, desc = "Highlight when yanking (copying) text", group = vim.api.nvim_create_augroup("kickstart-highlight-yank", {clear = true})})
+vim.api.nvim_create_autocmd("TextYankPost", {callback = _3_, desc = "Highlight when yanking (copying) text", group = vim.api.nvim_create_augroup("kickstart-highlight-yank", {clear = true})})
 local lazypath = (vim.fn.stdpath("data") .. "/lazy/lazy.nvim")
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"

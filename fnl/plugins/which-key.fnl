@@ -34,4 +34,5 @@
                 :mappings vim.g.have_nerd_font}
         :spec [{1 :<leader>s :group "[S]earch"}
                {1 :<leader>t :group "[T]oggle"}
+               {1 :<leader>u :group "[U]I"}
                {1 :<leader>h :group "Git [H]unk" :mode [:n :v]}]}}
