@@ -1,7 +1,7 @@
 -- [nfnl] Compiled from fnl/config.fnl by https://github.com/Olical/nfnl, do not edit.
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-vim.g.have_nerd_font = false
+vim.g.maplocalleader = "/"
+vim.g.have_nerd_font = true
 vim.opt.number = true
 vim.opt.mouse = "a"
 vim.opt.showmode = false

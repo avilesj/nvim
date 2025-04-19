@@ -1,6 +1,6 @@
 (set vim.g.mapleader " ")
-(set vim.g.maplocalleader " ")
-(set vim.g.have_nerd_font false)
+(set vim.g.maplocalleader "/")
+(set vim.g.have_nerd_font true)
 (set vim.opt.number true)
 (set vim.opt.mouse :a)
 (set vim.opt.showmode false)
