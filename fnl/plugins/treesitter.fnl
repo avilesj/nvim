@@ -1,3 +1,4 @@
+;; PURPOSE: Advanced syntax highlight
 {1 :nvim-treesitter/nvim-treesitter
  :build ":TSUpdate"
  :main :nvim-treesitter.configs

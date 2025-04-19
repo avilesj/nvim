@@ -1,3 +1,4 @@
+;; PURPOSE: Runs lint on buffer based on filetype
 {1 :mfussenegger/nvim-lint
  :config (fn []
            (local lint (require :lint))

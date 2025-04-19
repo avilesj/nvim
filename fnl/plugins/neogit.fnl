@@ -1,3 +1,4 @@
+;; PURPOSE: Magit, for neovim
 {1 "NeogitOrg/neogit"
  :dependencies ["nvim-lua/plenary.nvim"
                 "sindrets/diffview.nvim"

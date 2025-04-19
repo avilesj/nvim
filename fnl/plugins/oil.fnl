@@ -1,3 +1,4 @@
+;; PURPOSE: File explorer
 [{1 :stevearc/oil.nvim
   :dependencies [:nvim-tree/nvim-web-devicons]
   :event :Syntax

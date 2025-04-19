@@ -1,3 +1,5 @@
+;; PURPOSE: It enhances some builtin textobjects (like a(, a), a', and more), creates new ones (like a*, a<Space>, af, a?, and more), and allows user to create their own (like based on treesitter, and more).
+;; Could be a bit too abstract -- might not need it.
 {1 :echasnovski/mini.nvim
  :config (fn []
            ((. (require :mini.ai) :setup) {:n_lines 500})

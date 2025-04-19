@@ -1,3 +1,4 @@
+;; PURPOSE: Auto formatting
 {1 :stevearc/conform.nvim
  :cmd [:ConformInfo]
  :event [:BufWritePre]

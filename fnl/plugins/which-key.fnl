@@ -1,3 +1,4 @@
+;; PURPOSE: Previews keybinds
 {1 :folke/which-key.nvim
  :event :VimEnter
  :opts {:delay 0

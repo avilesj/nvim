@@ -1,3 +1,4 @@
+;; PURPOSE: Fuzzy finder window -- multi purpose
 {1 :nvim-telescope/telescope.nvim
  :config (fn []
            ((. (require :telescope) :setup) {:extensions {:ui-select [((. (require :telescope.themes)

@@ -1,3 +1,4 @@
+;; PURPOSE: Auto completion engine
 {1 :saghen/blink.cmp
  :dependencies [{1 :L3MON4D3/LuaSnip
                  :build ((fn []

@@ -1,3 +1,4 @@
+;; PURPOSE: Theming :)
 {1 :folke/tokyonight.nvim
  :config (fn []
            ((. (require :tokyonight) :setup) {:styles {:comments {:italic false}}})
