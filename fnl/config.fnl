@@ -71,4 +71,4 @@
   (each [k v (ipairs languages)]
     (require (.. "lang" "." v))))
 
-(load-langs ["fennel" "elixir"])
+(load-langs ["fennel" "elixir" "tailwindcss"])

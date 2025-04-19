@@ -55,4 +55,4 @@ local function load_langs(languages)
   end
   return nil
 end
-return load_langs({"fennel", "elixir"})
+return load_langs({"fennel", "elixir", "tailwindcss"})
