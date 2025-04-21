@@ -32,7 +32,10 @@
                            :Tab "<Tab> "
                            :Up "<Up> "})
                 :mappings vim.g.have_nerd_font}
-        :spec [{1 :<leader>s :group "[S]earch"}
-               {1 :<leader>t :group "[T]oggle"}
-               {1 :<leader>u :group "[U]I"}
-               {1 :<leader>h :group "Git [H]unk" :mode [:n :v]}]}}
+        :spec [{1 :<leader>s :group "Search"}
+               {1 :<leader>u :group "UI"}
+               {1 :<leader>b :group "Buffer"}
+               {1 :<leader>w :group "Window"}
+               {1 :<leader>c :group "Code"}
+               {1 :<leader>t :group "Tree explorer"}
+               {1 :<leader>h :group "Git Hunk" :mode [:n :v]}]}}

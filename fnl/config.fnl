@@ -35,11 +35,42 @@
                   (set vim.wo.wrap (not vim.wo.wrap)))
                 {:desc "Toggle wrap"})
 
+(vim.keymap.set :n :<leader>bb "<C-^>"
+                {:desc "Back to previous active buffer"
+                 :noremap true
+                 :silent true})
+
 (vim.api.nvim_create_autocmd :TextYankPost
                              {:callback (fn [] (vim.highlight.on_yank))
                               :desc "Highlight when yanking (copying) text"
                               :group (vim.api.nvim_create_augroup :kickstart-highlight-yank
                                                                   {:clear true})})
+
+;; LSP keybinds
+(fn telescope-builtin []
+  ;; implement me :)
+  )
+
+(vim.keymap.set :n :<leader>ca vim.lsp.buf.code_action {:desc "Code actions"})
+(vim.keymap.set :n :<leader>cr vim.lsp.buf.rename
+                {:desc "Rename" :noremap true :silent true})
+
+(vim.keymap.set :n :<leader>cs vim.lsp.buf.document_symbol
+                {:desc "Symbols" :noremap true :silent true})
+
+;; [LSP] remove default keybinds
+(vim.keymap.del :n :grr)
+(vim.keymap.del :n :grn)
+(vim.keymap.del :n :gra)
+(vim.keymap.del :n :gri)
+(vim.keymap.set :n :gr vim.lsp.buf.references
+                {:desc "Go to references" :noremap true :silent true})
+
+(vim.keymap.set :n :gD vim.lsp.buf.declaration
+                {:desc "Go to declaration" :noremap true :silent true})
+
+(vim.keymap.set :n :gd vim.lsp.buf.definition
+                {:desc "Go to definition" :noremap true :silent true})
 
 ;; Lazyvim load
 (local lazypath (.. (vim.fn.stdpath :data) :/lazy/lazy.nvim))
