@@ -1,5 +1,7 @@
 -- [nfnl] Compiled from fnl/config.fnl by https://github.com/Olical/nfnl, do not edit.
 local filter = require("functions.core").filter
+local delete_windows = require("functions.window")["delete-windows"]
+local delete_buffers = require("functions.buffer")["delete-buffers"]
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.g.have_nerd_font = true
@@ -40,12 +42,6 @@ local function _2_()
 end
 vim.keymap.set("n", "<leader>uw", _2_, {desc = "Toggle wrap"})
 vim.keymap.set("n", "<leader>bb", "<C-^>", {desc = "Back to previous active buffer", noremap = true, silent = true})
-local function delete_buffers(list)
-  for _, v in ipairs(list) do
-    vim.api.nvim_buf_delete(v, {force = false})
-  end
-  return nil
-end
 vim.keymap.set("n", "<leader>bd", ":bd<CR>", {desc = "Delete current buffer", noremap = true, silent = true})
 local function _3_()
   local current_buffer = vim.api.nvim_get_current_buf()
@@ -53,12 +49,6 @@ local function _3_()
   return delete_buffers(filter(list_of_buffers, current_buffer))
 end
 vim.keymap.set("n", "<leader>bo", _3_, {desc = "Close other buffers", noremap = true, silent = true})
-local function delete_windows(list)
-  for _, v in ipairs(list) do
-    vim.api.nvim_win_close(v, false)
-  end
-  return nil
-end
 local function _4_()
   local current_window = vim.api.nvim_get_current_win()
   local list_of_windows = vim.api.nvim_list_wins()

@@ -1,4 +1,6 @@
 (local filter (. (require :functions.core) :filter))
+(local delete-windows (. (require :functions.window) :delete-windows))
+(local delete-buffers (. (require :functions.buffer) :delete-buffers))
 (set vim.g.mapleader " ")
 (set vim.g.maplocalleader "\\")
 (set vim.g.have_nerd_font true)
@@ -42,11 +44,6 @@
                  :noremap true
                  :silent true})
 
-(fn delete-buffers [list]
-  ;; Deletes all buffers in the list
-  (each [_ v (ipairs list)]
-    (vim.api.nvim_buf_delete v {:force false})))
-
 (vim.keymap.set :n :<leader>bd ":bd<CR>"
                 {:desc "Delete current buffer" :noremap true :silent true})
 
@@ -60,11 +57,6 @@
                 {:desc "Close other buffers" :noremap true :silent true})
 
 ;; Window management
-(fn delete-windows [list]
-  ;; Deletes all windows in the list
-  (each [_ v (ipairs list)]
-    (vim.api.nvim_win_close v false)))
-
 (vim.keymap.set :n :<leader>wo
                 (fn []
                   (let [current-window (vim.api.nvim_get_current_win)
