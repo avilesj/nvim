@@ -1,6 +1,4 @@
 ;; PURPOSE: Theming :)
-{1 :folke/tokyonight.nvim
- :config (fn []
-           ((. (require :tokyonight) :setup) {:styles {:comments {:italic false}}})
-           (vim.cmd.colorscheme :tokyonight-night))
- :priority 1000}
+[[:rebelot/kanagawa.nvim]
+ {1 :folke/tokyonight.nvim :lazy false :opts {} :priority 1000}
+ {1 :scottmckendry/cyberdream.nvim :lazy false :priority 1000}]

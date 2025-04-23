@@ -1,6 +1,2 @@
 -- [nfnl] Compiled from fnl/plugins/themes.fnl by https://github.com/Olical/nfnl, do not edit.
-local function _1_()
-  require("tokyonight").setup({styles = {comments = {italic = false}}})
-  return vim.cmd.colorscheme("tokyonight-night")
-end
-return {"folke/tokyonight.nvim", config = _1_, priority = 1000}
+return {{"rebelot/kanagawa.nvim"}, {"folke/tokyonight.nvim", opts = {}, priority = 1000, lazy = false}, {"scottmckendry/cyberdream.nvim", priority = 1000, lazy = false}}

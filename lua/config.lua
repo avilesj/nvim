@@ -46,4 +46,5 @@ require("lazy").setup("plugins", {ui = {icons = ((vim.g.have_nerd_font and {}) o
 require("keymaps")
 local langs = {"fennel", "elixir", "tailwindcss", "javascript", "python"}
 local require_list = require("functions.core")["require-list"]
-return require_list(langs, "lang.")
+require_list(langs, "lang.")
+return vim.cmd.colorscheme("cyberdream")

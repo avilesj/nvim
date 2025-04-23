@@ -60,9 +60,13 @@
                                               :start "🚀"
                                               :task "📌"})}})
 
+;; Keymaps
 (require :keymaps)
 
+;; Language config files
 (local langs [:fennel :elixir :tailwindcss :javascript :python])
-
 (local require-list (. (require :functions.core) :require-list))
 (require-list langs "lang.")
+
+;; Theme
+(vim.cmd.colorscheme :cyberdream)
