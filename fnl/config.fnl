@@ -35,11 +35,50 @@
                   (set vim.wo.wrap (not vim.wo.wrap)))
                 {:desc "Toggle wrap"})
 
+;; Buffer management
 (vim.keymap.set :n :<leader>bb "<C-^>"
                 {:desc "Back to previous active buffer"
                  :noremap true
                  :silent true})
 
+(fn filter [list value]
+  ;; Returns a list without the 'value' element
+  (icollect [_ v (ipairs list)]
+    (if (not= v value) v)))
+
+(fn delete-buffers [list]
+  ;; Deletes all buffers in the list
+  (each [_ v (ipairs list)]
+    (vim.api.nvim_buf_delete v {:force false})))
+
+(vim.keymap.set :n :<leader>bd ":bd<CR>"
+                {:desc "Delete current buffer" :noremap true :silent true})
+
+(vim.keymap.set :n :<leader>bo
+                (fn []
+                  (let [current-buffer (vim.api.nvim_get_current_buf)
+                        list-of-buffers (vim.api.nvim_list_bufs)]
+                    (-> list-of-buffers
+                        (filter current-buffer)
+                        delete-buffers)))
+                {:desc "Close other buffers" :noremap true :silent true})
+
+;; Window management
+(fn delete-windows [list]
+  ;; Deletes all windows in the list
+  (each [_ v (ipairs list)]
+    (vim.api.nvim_win_close v false)))
+
+(vim.keymap.set :n :<leader>wo
+                (fn []
+                  (let [current-window (vim.api.nvim_get_current_win)
+                        list-of-windows (vim.api.nvim_list_wins)]
+                    (-> list-of-windows
+                        (filter current-window)
+                        delete-windows)))
+                {:desc "Close other windows" :noremap true :silent true})
+
+;; autocmd
 (vim.api.nvim_create_autocmd :TextYankPost
                              {:callback (fn [] (vim.highlight.on_yank))
                               :desc "Highlight when yanking (copying) text"
