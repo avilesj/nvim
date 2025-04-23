@@ -48,9 +48,6 @@
 (vim.keymap.set :n :<leader>cr vim.lsp.buf.rename
                 {:desc "Rename" :noremap true :silent true})
 
-(vim.keymap.set :n :<leader>cs vim.lsp.buf.document_symbol
-                {:desc "Symbols" :noremap true :silent true})
-
 ;; Diagnostics
 (vim.keymap.set :n :<leader>cd vim.diagnostic.open_float
                 {:desc "Line Diagnostics"})

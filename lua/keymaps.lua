@@ -30,7 +30,6 @@ end
 vim.keymap.set("n", "<leader>wo", _3_, {desc = "Close other windows", noremap = true, silent = true})
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {desc = "Code actions"})
 vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, {desc = "Rename", noremap = true, silent = true})
-vim.keymap.set("n", "<leader>cs", vim.lsp.buf.document_symbol, {desc = "Symbols", noremap = true, silent = true})
 vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, {desc = "Line Diagnostics"})
 vim.keymap.del("n", "grr")
 vim.keymap.del("n", "grn")
