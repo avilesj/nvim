@@ -64,7 +64,7 @@
 (require :keymaps)
 
 ;; Language config files
-(local langs [:fennel :elixir :tailwindcss :javascript :python])
+(local langs [:fennel :elixir :tailwindcss :javascript :python :json])
 (local require-list (. (require :functions.core) :require-list))
 (require-list langs "lang.")
 
