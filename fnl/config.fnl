@@ -1,3 +1,4 @@
+(local filter (. (require :functions.core) :filter))
 (set vim.g.mapleader " ")
 (set vim.g.maplocalleader "\\")
 (set vim.g.have_nerd_font true)
@@ -40,11 +41,6 @@
                 {:desc "Back to previous active buffer"
                  :noremap true
                  :silent true})
-
-(fn filter [list value]
-  ;; Returns a list without the 'value' element
-  (icollect [_ v (ipairs list)]
-    (if (not= v value) v)))
 
 (fn delete-buffers [list]
   ;; Deletes all buffers in the list

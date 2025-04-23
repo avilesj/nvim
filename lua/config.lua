@@ -1,4 +1,5 @@
 -- [nfnl] Compiled from fnl/config.fnl by https://github.com/Olical/nfnl, do not edit.
+local filter = require("functions.core").filter
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.g.have_nerd_font = true
@@ -39,24 +40,6 @@ local function _2_()
 end
 vim.keymap.set("n", "<leader>uw", _2_, {desc = "Toggle wrap"})
 vim.keymap.set("n", "<leader>bb", "<C-^>", {desc = "Back to previous active buffer", noremap = true, silent = true})
-local function filter(list, value)
-  local tbl_21_auto = {}
-  local i_22_auto = 0
-  for _, v in ipairs(list) do
-    local val_23_auto
-    if (v ~= value) then
-      val_23_auto = v
-    else
-      val_23_auto = nil
-    end
-    if (nil ~= val_23_auto) then
-      i_22_auto = (i_22_auto + 1)
-      tbl_21_auto[i_22_auto] = val_23_auto
-    else
-    end
-  end
-  return tbl_21_auto
-end
 local function delete_buffers(list)
   for _, v in ipairs(list) do
     vim.api.nvim_buf_delete(v, {force = false})
@@ -64,28 +47,28 @@ local function delete_buffers(list)
   return nil
 end
 vim.keymap.set("n", "<leader>bd", ":bd<CR>", {desc = "Delete current buffer", noremap = true, silent = true})
-local function _5_()
+local function _3_()
   local current_buffer = vim.api.nvim_get_current_buf()
   local list_of_buffers = vim.api.nvim_list_bufs()
   return delete_buffers(filter(list_of_buffers, current_buffer))
 end
-vim.keymap.set("n", "<leader>bo", _5_, {desc = "Close other buffers", noremap = true, silent = true})
+vim.keymap.set("n", "<leader>bo", _3_, {desc = "Close other buffers", noremap = true, silent = true})
 local function delete_windows(list)
   for _, v in ipairs(list) do
     vim.api.nvim_win_close(v, false)
   end
   return nil
 end
-local function _6_()
+local function _4_()
   local current_window = vim.api.nvim_get_current_win()
   local list_of_windows = vim.api.nvim_list_wins()
   return delete_windows(filter(list_of_windows, current_window))
 end
-vim.keymap.set("n", "<leader>wo", _6_, {desc = "Close other windows", noremap = true, silent = true})
-local function _7_()
+vim.keymap.set("n", "<leader>wo", _4_, {desc = "Close other windows", noremap = true, silent = true})
+local function _5_()
   return vim.highlight.on_yank()
 end
-vim.api.nvim_create_autocmd("TextYankPost", {callback = _7_, desc = "Highlight when yanking (copying) text", group = vim.api.nvim_create_augroup("kickstart-highlight-yank", {clear = true})})
+vim.api.nvim_create_autocmd("TextYankPost", {callback = _5_, desc = "Highlight when yanking (copying) text", group = vim.api.nvim_create_augroup("kickstart-highlight-yank", {clear = true})})
 local function telescope_builtin()
 end
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {desc = "Code actions"})
