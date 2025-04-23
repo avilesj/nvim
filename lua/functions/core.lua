@@ -18,7 +18,14 @@ core.filter = function(list, value)
   end
   return tbl_21_auto
 end
-core.te = function()
-  return print("test")
+core["require-list"] = function(modules, prefix)
+  for _, v in ipairs(modules) do
+    if (nil ~= prefix) then
+      require((prefix .. v))
+    else
+      require(v)
+    end
+  end
+  return nil
 end
 return core

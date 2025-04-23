@@ -60,10 +60,9 @@
                                               :start "🚀"
                                               :task "📌"})}})
 
-(fn load-langs [languages]
-  ;; Load languages configurations
-  (each [k v (ipairs languages)]
-    (require (.. "lang" "." v))))
-
 (require :keymaps)
-(load-langs [:fennel :elixir :tailwindcss :javascript :python])
+
+(local langs [:fennel :elixir :tailwindcss :javascript :python])
+
+(local require-list (. (require :functions.core) :require-list))
+(require-list langs "lang.")
