@@ -28,6 +28,10 @@ local function _3_()
   return delete_windows(filter(list_of_windows, current_window))
 end
 vim.keymap.set("n", "<leader>wo", _3_, {desc = "Close other windows", noremap = true, silent = true})
+local function _4_()
+  return vim.cmd("checkhealth lsp")
+end
+vim.keymap.set("n", "<leader>cl", _4_, {desc = "LSP Info"})
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {desc = "Code actions"})
 vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, {desc = "Rename", noremap = true, silent = true})
 vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, {desc = "Line Diagnostics"})

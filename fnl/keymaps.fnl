@@ -44,6 +44,9 @@
                 {:desc "Close other windows" :noremap true :silent true})
 
 ;; LSP keybinds
+(vim.keymap.set :n :<leader>cl (fn [] (vim.cmd "checkhealth lsp"))
+                {:desc "LSP Info"})
+
 (vim.keymap.set :n :<leader>ca vim.lsp.buf.code_action {:desc "Code actions"})
 (vim.keymap.set :n :<leader>cr vim.lsp.buf.rename
                 {:desc "Rename" :noremap true :silent true})
