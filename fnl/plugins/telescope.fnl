@@ -24,6 +24,8 @@
                            {:desc "Search Diagnostics"})
            (vim.keymap.set :n :<leader>sr builtin.resume
                            {:desc "Search Resume"})
+           (vim.keymap.set :n :gr builtin.lsp_references
+                           {:desc "LSP References"})
            (vim.keymap.set :n :<leader>s. builtin.oldfiles
                            {:desc "Search Recent Files (\".\" for repeat)"})
            (vim.keymap.set :n "<leader>," builtin.buffers

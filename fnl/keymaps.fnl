@@ -60,9 +60,6 @@
 (vim.keymap.del :n :grn)
 (vim.keymap.del :n :gra)
 (vim.keymap.del :n :gri)
-(vim.keymap.set :n :gr vim.lsp.buf.references
-                {:desc "Go to references" :noremap true :silent true})
-
 (vim.keymap.set :n :gD vim.lsp.buf.declaration
                 {:desc "Go to declaration" :noremap true :silent true})
 
