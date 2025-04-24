@@ -62,6 +62,8 @@
 
 ;; Keymaps
 (require :keymaps)
+;; AutoCMDs
+(require :autocmds)
 
 ;; Language config files
 (local langs [:fennel :elixir :tailwindcss :javascript :python :json])

@@ -1,15 +1,19 @@
 ;; PURPOSE: Auto completion engine
 [{1 :saghen/blink.compat :version "*" :lazy true :opts {}}
  {1 :saghen/blink.cmp
-  :dependencies [:folke/lazydev.nvim]
+  :dependencies [:folke/lazydev.nvim :giuxtaposition/blink-cmp-copilot]
   :event :VimEnter
   :opts {:appearance {:nerd_font_variant :mono}
          :cmdline {:enabled false}
          :completion {:accept {:auto_brackets {:enabled true}}
                       :documentation {:auto_show true :auto_show_delay_ms 200}
                       :menu {:draw {:treesitter {1 :lsp}}}}
-         :sources {:default [:lsp :path :snippets :buffer :lazydev]
+         :sources {:default [:lsp :path :snippets :buffer :lazydev :copilot]
                    :providers {:lazydev {:name "LazyDev"
                                          :module "lazydev.integrations.blink"
-                                         :score_offset 100}}}}
+                                         :score_offset 100}
+                               :copilot {:name "copilot"
+                                         :module "blink-cmp-copilot"
+                                         :score_offset 100
+                                         :async true}}}}
   :version :1.*}]
