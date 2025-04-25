@@ -62,6 +62,3 @@
 (vim.keymap.del :n :gri)
 (vim.keymap.set :n :gD vim.lsp.buf.declaration
                 {:desc "Go to declaration" :noremap true :silent true})
-
-(vim.keymap.set :n :gd vim.lsp.buf.definition
-                {:desc "Go to definition" :noremap true :silent true})
