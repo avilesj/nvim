@@ -1,6 +1,5 @@
 {1 :nvim-orgmode/orgmode
- :config (fn []
-           ((. (require :orgmode) :setup) {:org_agenda_files "~/orgfiles/agenda/**/*"
-                                           :org_default_notes_file "~/orgfiles/refile.org"}))
+ :opts {:org_agenda_files "~/Personal/Notes/Org/agenda/**/*"
+        :org_default_notes_file "~/Personal/Notes/Org/refile.org"}
  :event :VeryLazy
  :ft [:org]}

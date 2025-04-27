@@ -62,3 +62,16 @@
 (vim.keymap.del :n :gri)
 (vim.keymap.set :n :gD vim.lsp.buf.declaration
                 {:desc "Go to declaration" :noremap true :silent true})
+
+;; [Org] global
+(vim.keymap.set :n :<leader>oR
+                (fn []
+                  (vim.cmd (.. "e "
+                               (. (. (. (. (. (. (require :lazy.core.config)
+                                                 :plugins)
+                                              :orgmode)
+                                           :_)
+                                        :cache)
+                                     :opts)
+                                  :org_default_notes_file))))
+                {:desc "Open refiler" :noremap true :silent true})

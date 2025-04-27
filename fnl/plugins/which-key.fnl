@@ -37,4 +37,5 @@
                {1 :<leader>b :group "Buffer"}
                {1 :<leader>w :group "Window"}
                {1 :<leader>c :group "Code"}
+               {1 :<leader>o :group "Org"}
                {1 :<leader>t :group "Tree explorer"}]}}
