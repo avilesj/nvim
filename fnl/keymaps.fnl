@@ -70,3 +70,14 @@
                                (. (require :lazy.core.config) :plugins :orgmode
                                   :_ :cache :opts :org_default_notes_file))))
                 {:desc "Open refiler" :noremap true :silent true})
+
+(vim.keymap.set :n :<leader>of
+                (fn []
+                  ((. (require :telescope.builtin) :find_files) {:cwd (. (require :lazy.core.config)
+                                                                         :plugins
+                                                                         :orgmode
+                                                                         :_
+                                                                         :cache
+                                                                         :opts
+                                                                         :org_default_dir)}))
+                {:desc "Search org files" :noremap true :silent true})

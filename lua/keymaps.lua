@@ -43,4 +43,8 @@ vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {desc = "Go to declaration", 
 local function _5_()
   return vim.cmd(("e " .. require("lazy.core.config").plugins.orgmode._.cache.opts.org_default_notes_file))
 end
-return vim.keymap.set("n", "<leader>oR", _5_, {desc = "Open refiler", noremap = true, silent = true})
+vim.keymap.set("n", "<leader>oR", _5_, {desc = "Open refiler", noremap = true, silent = true})
+local function _6_()
+  return require("telescope.builtin").find_files({cwd = require("lazy.core.config").plugins.orgmode._.cache.opts.org_default_dir})
+end
+return vim.keymap.set("n", "<leader>of", _6_, {desc = "Search org files", noremap = true, silent = true})
