@@ -30,7 +30,8 @@
                                                             "classList"
                                                             "ngClass"]
                                           ;; Tailwind v3, Elixir
-                                          :experimental {:configFile {"assets/tailwind.config.js" "lib/**"
+                                          :experimental {:configFile {"assets/tailwind.config.js" ["lib/**"
+                                                                                                   "assets/**"]
                                                                       "tailwind.config.js" "src/**"}}}}
                  :root_markers ["mix.exs"
                                 "tailwind.config.js"
