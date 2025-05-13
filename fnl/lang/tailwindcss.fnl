@@ -10,6 +10,7 @@
                              "javascript.jsx"
                              "typescript"
                              "typescriptreact"
+                             "astro"
                              "typescript.tsx"
                              "html"
                              "svelte"]
@@ -32,8 +33,10 @@
                                           ;; Tailwind v3, Elixir
                                           :experimental {:configFile {"assets/tailwind.config.js" ["lib/**"
                                                                                                    "assets/**"]
+                                                                      "src/styles/global.css" "src/**"
                                                                       "tailwind.config.js" "src/**"}}}}
                  :root_markers ["mix.exs"
+                                "package.json"
                                 "tailwind.config.js"
                                 "tailwind.config.ts"]})
 
