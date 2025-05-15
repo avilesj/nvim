@@ -1,7 +1,7 @@
 -- [nfnl] Compiled from fnl/plugins/lint.fnl by https://github.com/Olical/nfnl, do not edit.
 local function _1_()
   local lint = require("lint")
-  lint.linters_by_ft = {fennel = {"fennel"}, markdown = {"markdownlint"}}
+  lint.linters_by_ft = {fennel = {"fennel"}}
   local lint_augroup = vim.api.nvim_create_augroup("lint", {clear = true})
   local function _2_()
     if vim.opt_local.modifiable:get() then
