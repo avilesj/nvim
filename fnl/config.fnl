@@ -66,7 +66,14 @@
 (require :autocmds)
 
 ;; Language config files
-(local langs [:fennel :elixir :tailwindcss :javascript :python :json :svelte])
+(local langs [:fennel
+              :elixir
+              :tailwindcss
+              :javascript
+              :python
+              :json
+              :svelte
+              :docker])
 (local require-list (. (require :functions.core) :require-list))
 (require-list langs "lang.")
 
