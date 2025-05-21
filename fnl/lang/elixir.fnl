@@ -1,6 +1,6 @@
 (vim.lsp.config :elixir-ls
                 {:cmd ["elixir-ls"]
-                 :filetypes ["elixir"]
+                 :filetypes ["elixir" "heex" "eelixir" "eex" "html-eex"]
                  :root_markers ["mix.exs"]})
 
 (if (not ((. (require :mason-registry) :is_installed) :elixir-ls))
