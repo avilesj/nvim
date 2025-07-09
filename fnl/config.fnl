@@ -73,7 +73,9 @@
               :python
               :json
               :svelte
+              :csharp
               :docker])
+
 (local require-list (. (require :functions.core) :require-list))
 (require-list langs "lang.")
 
