@@ -1,2 +1,2 @@
 -- [nfnl] Compiled from fnl/plugins/themes.fnl by https://github.com/Olical/nfnl, do not edit.
-return {{"rebelot/kanagawa.nvim"}, {"folke/tokyonight.nvim", opts = {}, priority = 1000, lazy = false}, {"scottmckendry/cyberdream.nvim", priority = 1000, lazy = false}}
+return {{"rebelot/kanagawa.nvim"}, {"folke/tokyonight.nvim", opts = {}, priority = 1000, lazy = false}, {"scottmckendry/cyberdream.nvim", priority = 1000, opts = {transparent = true, styles = {sidebars = "transparent", floats = "transparent"}}, lazy = false}}
