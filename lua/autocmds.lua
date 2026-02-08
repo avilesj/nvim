@@ -18,4 +18,10 @@ local function _1_()
   map("n", "<localleader>u", "<cmd>FlutterPubUpgrade<cr>", {desc = "Flutter Pub Upgrade"})
   return wk.add("f", {name = "Flutter", r = {"<cmd>FlutterRun<cr>", "Run"}, R = {"<cmd>FlutterRestart<cr>", "Restart"}, q = {"<cmd>FlutterQuit<cr>", "Quit"}, d = {"<cmd>FlutterDevices<cr>", "Devices"}, e = {"<cmd>FlutterEmulators<cr>", "Emulators"}, o = {"<cmd>FlutterOutlineToggle<cr>", "Outline"}, t = {"<cmd>FlutterDevTools<cr>", "DevTools"}, a = {"<cmd>FlutterLspReferences<cr>", "References"}, s = {"<cmd>FlutterSuper<cr>", "Super"}, T = {"<cmd>FlutterTest<cr>", "Test"}, w = {"<cmd>FlutterTestWatch<cr>", "Test Watch"}, p = {"<cmd>FlutterPubGet<cr>", "Pub Get"}, u = {"<cmd>FlutterPubUpgrade<cr>", "Pub Upgrade"}}, {prefix = "<localleader>"})
 end
-return vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {group = "flutter", once = true, pattern = {"*.dart"}, callback = _1_})
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {group = "flutter", once = true, pattern = {"*.dart"}, callback = _1_})
+local function _2_()
+  print("Test")
+  vim.b.blink_auto_brackets = false
+  return nil
+end
+return vim.api.nvim_create_autocmd({"FileType"}, {pattern = {"fennel"}, callback = _2_})

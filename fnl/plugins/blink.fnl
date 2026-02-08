@@ -5,7 +5,9 @@
   :event :VimEnter
   :opts {:appearance {:nerd_font_variant :mono}
          :cmdline {:enabled false}
-         :completion {:accept {:auto_brackets {:enabled true}}
+         :completion {:accept {:auto_brackets {:enabled true
+                                               :kind_resolution {:enabled true
+                                                                 :blocked_filetypes ["fennel"]}}}
                       :documentation {:auto_show true :auto_show_delay_ms 200}
                       :menu {:draw {:treesitter {1 :lsp}}}}
          :sources {:default [:lsp :path :snippets :buffer :lazydev :copilot]
